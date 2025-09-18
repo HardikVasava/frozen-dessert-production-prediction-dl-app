@@ -1,0 +1,30 @@
+# Ignore Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore Flask-related environment files
+*.env
+*.flaskenv
+
+# Ignore model-related files (trained models)
+/model/models/
+model/*.h5
+model/*.pth
+model/*.pkl
+
+# Ignore log files
+*.log
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+
+# Ignore static files from Flask if not needed
+/static/
+/templates/
+

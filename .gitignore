@@ -1,0 +1,21 @@
+# Ignore IDE project files
+.idea/
+
+# MacOS files (just in case)
+.DS_Store
+
+# Windows system files
+Thumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Python bytecode everywhere
+__pycache__/
+*.py[cod]
+
+# Virtual environments (in root, if any)
+venv/
+env/

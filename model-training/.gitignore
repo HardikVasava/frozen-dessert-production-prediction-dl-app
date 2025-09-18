@@ -1,0 +1,54 @@
+# ======================
+# Model weights & artifacts
+# ======================
+/models/
+*.h5
+*.pth
+*.pkl
+
+# ======================
+# Datasets
+# ======================
+data/
+
+# ======================
+# Logs
+# ======================
+*.log
+
+# ======================
+# Python bytecode
+# ======================
+*.pyc
+*.pyo
+__pycache__/
+
+# ======================
+# Virtual environments
+# ======================
+venv/
+env/
+
+# ======================
+# Environment/config files
+# ======================
+*.env
+
+# ======================
+# Jupyter Notebook checkpoints
+# (Ensure all possible patterns are covered)
+# ======================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# ======================
+# OS/system files
+# ======================
+.DS_Store
+
+# ======================
+# IDE/project files
+# ======================
+.idea/
+.vscode/
