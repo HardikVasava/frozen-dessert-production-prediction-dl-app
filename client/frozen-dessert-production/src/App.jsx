@@ -51,15 +51,15 @@ const App = () => {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-200 px-4 py-10">
-      <div className="w-full max-w-4xl bg-white/30 backdrop-blur-md shadow-xl rounded-2xl p-10 border border-white/60">
-        <h1 className="text-4xl font-extrabold text-center text-blue-900 mb-4 tracking-tight">
+      <div className="w-full max-w-3xl bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl p-8 sm:p-10 border border-white/60">
+        <h1 className="text-4xl font-bold text-center text-blue-900 mb-6 tracking-tight">
           🍦 Frozen Dessert Production Predictor
         </h1>
-        <p className="text-gray-700 text-center mb-8 text-sm md:text-base">
+        <p className="text-gray-700 text-center mb-6 text-sm sm:text-base">
           Input your monthly production figures (in millions of gallons) to forecast the next month.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-6">
           {inputs.map((value, idx) => {
             const isInvalid = touched.includes(idx) && isNaN(Number(value));
             return (
@@ -70,7 +70,7 @@ const App = () => {
                   inputMode="decimal"
                   value={value}
                   onChange={(e) => handleChange(e.target.value, idx)}
-                  className={`peer w-full px-3 pt-5 pb-2 text-sm rounded-lg border transition duration-200 outline-none focus:ring-2 ${
+                  className={`peer w-full px-4 pt-5 pb-2 text-sm sm:text-base rounded-lg border transition duration-200 outline-none focus:ring-2 ${
                     isInvalid
                       ? "border-red-400 focus:ring-red-300"
                       : "border-gray-300 focus:ring-blue-400"
@@ -80,7 +80,7 @@ const App = () => {
                 />
                 <label
                   htmlFor={`month-${idx}`}
-                  className="absolute left-3 top-2 text-xs text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-600"
+                  className="absolute left-3 top-2 text-xs sm:text-sm text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-600"
                 >
                   {monthNames[idx]}
                 </label>
@@ -90,16 +90,16 @@ const App = () => {
         </div>
 
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-md mb-4 text-center text-sm">
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-md mb-4 text-center text-sm sm:text-base">
             {error}
           </div>
         )}
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-6">
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className={`inline-flex items-center gap-2 px-6 py-2 text-white font-semibold rounded-lg transition duration-200 shadow-sm ${
+            className={`inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-lg transition duration-200 shadow-lg ${
               loading
                 ? "bg-blue-300 cursor-not-allowed"
                 : "bg-blue-600 hover:bg-blue-700"
@@ -137,7 +137,7 @@ const App = () => {
         </div>
 
         {prediction && (
-          <div className="mt-6 bg-green-50 border border-green-200 text-green-700 px-4 py-4 rounded-lg text-center text-lg font-semibold">
+          <div className="mt-6 bg-green-50 border border-green-200 text-green-700 px-4 py-4 rounded-lg text-center text-lg sm:text-xl font-semibold">
             📈 Next Month’s Forecast: <span className="text-green-800">{prediction}M gallons</span>
           </div>
         )}
